@@ -76,8 +76,8 @@ public abstract class GenerateMojo extends AbstractMojo {
     private boolean attachSwaggerArtifact;
 
     /**
-     * Specifies the implementation of {@link Application}. If the class is not specified,
-     * the resource packages are scanned for the {@link Application} implementations
+     * Specifies the implementation of {@code Application}. If the class is not specified,
+     * the resource packages are scanned for the {@code Application} implementations
      * automatically.
      */
     @Parameter(name = "applicationClass", defaultValue = "")
@@ -90,6 +90,7 @@ public abstract class GenerateMojo extends AbstractMojo {
      * When true, the plugin produces a pretty-printed JSON Swagger specification. Note that this parameter doesn't
      * have any effect on the generation of the YAML version because YAML is pretty-printed by nature.
      */
+    @Parameter(defaultValue = "true")
     private boolean prettyPrint = true;
 
     @Component
