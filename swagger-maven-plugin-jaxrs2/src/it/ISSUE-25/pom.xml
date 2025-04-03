@@ -30,7 +30,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>io.github.dgautier</groupId>
+                <groupId>de.smartics.maven.plugin</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
                 <version>@project.version@</version>
                 <configuration>

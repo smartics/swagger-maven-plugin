@@ -6,7 +6,7 @@
 
     <name>Swagger Maven Plugin</name>
 
-    <groupId>io.github.dgautier</groupId>
+    <groupId>de.smartics.maven.plugin</groupId>
     <version>2.2.0-SNAPSHOT</version>
     <artifactId>swagger-maven-plugin</artifactId>
     <packaging>pom</packaging>
@@ -31,10 +31,10 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/openapi-tools/swagger-maven-plugin.git</connection>
-        <developerConnection>scm:git:https://github.com/openapi-tools/swagger-maven-plugin.git</developerConnection>
-        <url>https://github.com/openapi-tools/swagger-maven-plugin/tree/master</url>
-        <tag>HEAD</tag>
+        <connection>scm:git:https://github.com/smartics/${artifactId}</connection>
+        <developerConnection>scm:git:https://github.com/smartics/${artifactId}</developerConnection>
+        <url>https://github.com/smartics/${artifactId}</url>
+        <tag>feature/jakarta-smartics</tag>
     </scm>
 
     <properties>
@@ -262,6 +262,29 @@
                     <name>GitHub Packages</name>
                     <url>https://maven.pkg.github.com/dgautier/swagger-maven-plugin</url>
                 </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>smartics-distribution</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <project-visibility>public</project-visibility>
+                <repo.server.upload>dav:https://nexus.smartics.eu/nexus/content/repositories</repo.server.upload>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>${project-visibility}</id>
+                    <name>internal smartics release repository</name>
+                    <url>${repo.server.upload}/${project-visibility}</url>
+                </repository>
+                <snapshotRepository>
+                    <uniqueVersion>false</uniqueVersion>
+                    <id>${project-visibility}-snapshot</id>
+                    <name>internal smartics snapshot repository</name>
+                    <url>${repo.server.upload}/${project-visibility}-snapshot</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
         <profile>
