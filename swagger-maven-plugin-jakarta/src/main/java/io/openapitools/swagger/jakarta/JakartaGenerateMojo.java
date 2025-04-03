@@ -32,7 +32,7 @@ public class JakartaGenerateMojo extends GenerateMojo {
             return reflectiveScanner.applicationInstance();
         }
 
-        Class<?> clazz = ClassUtils.loadClass(getApplicationClass(), Thread.currentThread().getContextClassLoader());
+        Class<?> clazz = ClassUtils.loadClass(getApplicationClass(), createClassLoader());
 
         if (clazz == null || !Application.class.isAssignableFrom(clazz)) {
             getLog().warn("Provided application class does not implement jakarta.ws.rs.core.Application, skipping");
