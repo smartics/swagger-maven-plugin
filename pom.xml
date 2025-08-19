@@ -6,7 +6,7 @@
     <name>Swagger Maven Plugin</name>
 
     <groupId>de.smartics.maven.plugin</groupId>
-    <version>3.0.0</version>
+    <version>3.0.1-SNAPSHOT</version>
     <artifactId>swagger-maven-plugin</artifactId>
     <packaging>pom</packaging>
 
@@ -33,7 +33,7 @@
         <connection>scm:git:https://github.com/smartics/${artifactId}</connection>
         <developerConnection>scm:git:https://github.com/smartics/${artifactId}</developerConnection>
         <url>https://github.com/smartics/${artifactId}</url>
-        <tag>swagger-maven-plugin-3.0.0</tag>
+        <tag>smartics-master</tag>
     </scm>
 
     <properties>
